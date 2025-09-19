@@ -16,22 +16,41 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 line-height: 1,6;
 background-color: #f4f4f9;
 color: #333;
-padding: 20px;
 }
-   
-header{
+ .container {
+    max-width: 1100px;
+    margin: 0 auto;
+   padding: 20px;
+}  
+
+header {
     background-color: #5c6bc0;
     color: white;
     padding: 20px;
-text-align: center;
- border-radius: 8px;
+    border-radius: 8px;
 }
-   
-nav a{
+  .header-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+} 
+
+.header-flex h1 {
+    margin-bottom: 10px;
+}
+
+nav {
+ display: flex;
+ gap: 20px;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+nav a {
     color: white;
    text-decoration: none;
-   margin: 0 15px;
-font-weight: bold;
+   font-weight: bold;
 }  
      
  nav a:hover{
@@ -39,8 +58,7 @@ font-weight: bold;
  }    
     
  main{
-    max-width: 900px;
-     margin: 30px auto;
+     margin-top: 30px ;
     padding: 20px;
     background: white;
  border-radius: 8px;
@@ -51,12 +69,13 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
   }
   
-  h2{
+  h2 {
     color: #5c6bc0;
   margin-bottom: 15px;
-font-size: 1.1em;
+font-size: 1.4em;
 }
-  p,li {
+  
+p,li {
     font-size: 1.1em;
   margin-bottom: 10px;
 }
@@ -69,6 +88,18 @@ img {
     border-radius: 50%;
      margin: 10px 0;
     max-width: 150px;
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
+     gap: 20px;
+}
+
+.projeto-item {
+    background-color: #f1f1f1;
+    padding: 15px;
+     border-radius: 8px;
 }
 
 footer {
@@ -88,7 +119,14 @@ a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+@media(min-width:700px){
+    .header-flex {
+        flex-direction: row;
+    align-items: center;
+    }
+}
+
+@media (maxn-width: 600px) {
     nav a {
         display: block;
         margin: 10px 0;
@@ -110,10 +148,11 @@ img{
      <a href="#contatos">contatos</a>
 </nav>
 </header>
+<main>
 
-<section id="apresentação">
+    <section id="apresentação">
 <h2>Bem vindo!</h2>
-<img src="" alt="Foto de Luana Pereira"width="100">
+<img src="luana.jpeg.jpeg" alt="Foto de Luana Pereira"width="100">
 <p>Estudante de Análise e Desenvolvimento de Sistemas,explorando o mundo da programação e construido meu primeiro portfólio.</p>
 </section>
 
@@ -124,10 +163,16 @@ img{
 
 <section id="projetos">
 <h2>Projetos</h2>
-<ul>
-<li><strong>Projeto 1 - Auto Solar</strong>:Estação de carregamento de energia sustentável que visa a otimização e melhoria da acessibilidade de carregamento dos veiculos movidos a eletricidade.</li>
-<li><strong>Projeto 2- Anywhere Office</strong>: Plataforma online para apoiar empresas na adoção do modelo de trabalho home office.</li>
-</ul>
+<div class="projetos-grid">
+    <div class="projeto-item">
+        <strong>Projeto 1 - Auto Solar</strong>
+        <P>Estação de carregamento de energia sustentável qu visa a otimização e melhoria da acessibilidade de carregamento dos veiculos movidos a eletricidade.</P>
+    </div>
+<div class=""projeto-item>
+    <strong>Projeto 2 - Anywhere Oficce</strong>
+<p>Plataforma online para apoiar empresas na adoação do modelo de trabalho Home office.</p>
+</div>
+</div>
 </section>
 
 <section id="contatos">
